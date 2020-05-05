@@ -1,0 +1,1 @@
+A money management app for your wallet.
