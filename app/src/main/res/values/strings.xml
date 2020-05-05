@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">WalletCount</string>
+    <string name="title_home">Amount</string>
+    <string name="title_dashboard">Budget</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
