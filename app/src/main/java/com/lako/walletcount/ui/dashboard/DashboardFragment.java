@@ -69,8 +69,7 @@ public class DashboardFragment extends Fragment {
 
         loadData();
 
-        double num1 = Double.parseDouble(textbudget);
-        double num2 = Double.parseDouble("0.00");
+        double num1 = Double.parseDouble(textbudget.replaceAll(",", "."));
         if(num1<0){
         message1.setText("We can work on that.");
         message2.setText("You went over your budget!");
@@ -105,8 +104,8 @@ public class DashboardFragment extends Fragment {
 
     public void updateViews(){
         amountLeft.setText(textbudget);
-        double defb = Double.parseDouble(defbudget);
-        double txtb = Double.parseDouble(textbudget);
+        double defb = Double.parseDouble(defbudget.replaceAll(",", "."));
+        double txtb = Double.parseDouble(textbudget.replaceAll(",", "."));
         int txte = (int)Math.round(txtb);
         int defe = (int)Math.round(defb);
         progressBar.setMax(defe);

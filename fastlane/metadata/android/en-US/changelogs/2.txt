@@ -1,0 +1,1 @@
+Fixed a bug that causes the app to crash when using a comma as a decimal point.
