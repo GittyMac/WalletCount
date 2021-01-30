@@ -1,5 +1,6 @@
 package com.lako.walletcount;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -43,20 +44,29 @@ public class SetBudgetSheet extends BottomSheetDialogFragment {
                 if(inputEditText.getText().toString().length() == 0){
                     inputEditText.setText("0");
                 }
-                double num1 = Double.parseDouble(inputEditText.getText().toString());
-                double num2 = Double.parseDouble(budget.getText().toString());
-                double sum = num1 + num2;
-                budget.setText(String.format("%.2f",sum));
-                Calendar cal=Calendar.getInstance();
-                SimpleDateFormat month_date = new SimpleDateFormat("MMMM");
-                String month_name = month_date.format(cal.getTime());
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                try {
+                    double num1 = Double.parseDouble(inputEditText.getText().toString().replaceAll(",", "."));
+                    double num2 = Double.parseDouble(budget.getText().toString().replaceAll(",", "."));
+                    double sum = num1 + num2;
+                    budget.setText(String.format("%.2f", sum));
+                    Calendar cal = Calendar.getInstance();
+                    SimpleDateFormat month_date = new SimpleDateFormat("MMMM");
+                    String month_name = month_date.format(cal.getTime());
+                    SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                editor.putString(TEXT, budget.getText().toString());
-                editor.putString(OGTEXT, budget.getText().toString());
-                editor.putString(MONTH, month_name);
-                editor.apply();
+                    editor.putString(TEXT, budget.getText().toString());
+                    editor.putString(OGTEXT, budget.getText().toString());
+                    editor.putString(MONTH, month_name);
+                    editor.apply();
+                }catch(NumberFormatException exception){
+                    new AlertDialog.Builder(v.getContext())
+                            .setTitle("Error")
+                            .setMessage("Invalid number was entered.")
+                            .setNeutralButton("OK", null)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }
             }
         });
         return view;

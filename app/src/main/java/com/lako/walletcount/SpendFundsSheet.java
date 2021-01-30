@@ -1,5 +1,6 @@
 package com.lako.walletcount;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -43,19 +44,28 @@ public class SpendFundsSheet extends BottomSheetDialogFragment {
                 if(fundsToRemove.getText().toString().length() == 0){
                     fundsToRemove.setText("0");
                 }
-                double num1 = Double.parseDouble(fundsToRemove.getText().toString());
-                double num2 = Double.parseDouble(amount.getText().toString());
-                double num3 = Double.parseDouble(textbudget);
-                double budgetsum = num3 - num1;
-                double sum = num2 - num1;
-                textbudget = String.format("%.2f", budgetsum);
-                amount.setText(String.format("%.2f",sum));
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                try {
+                    double num1 = Double.parseDouble(fundsToRemove.getText().toString().replaceAll(",", "."));
+                    double num2 = Double.parseDouble(amount.getText().toString().replaceAll(",", "."));
+                    double num3 = Double.parseDouble(textbudget.replaceAll(",", "."));
+                    double budgetsum = num3 - num1;
+                    double sum = num2 - num1;
+                    textbudget = String.format("%.2f", budgetsum);
+                    amount.setText(String.format("%.2f", sum));
+                    SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                editor.putString(TEXT, amount.getText().toString());
-                editor.putString(TEXTBUDGET, textbudget);
-                editor.apply();
+                    editor.putString(TEXT, amount.getText().toString());
+                    editor.putString(TEXTBUDGET, textbudget);
+                    editor.apply();
+                }catch(NumberFormatException exception){
+                    new AlertDialog.Builder(v.getContext())
+                            .setTitle("Error")
+                            .setMessage("Invalid number was entered.")
+                            .setNeutralButton("OK", null)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }
             }
         });
         return view;
