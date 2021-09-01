@@ -8,7 +8,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="343dp"
+        android:layout_width="match_parent"
+        android:autoSizeTextType="uniform"
         android:layout_height="108dp"
         android:layout_marginBottom="250dp"
         android:text="0.00"
@@ -19,28 +20,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="200dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:text="Add to balance"
-        app:icon="@drawable/ic_add_black_24dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/HomeConstraintInnerLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="200dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:text="Spend"
-        app:icon="@drawable/ic_attach_money_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Add to balance"
+            app:icon="@drawable/ic_add_black_24dp"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="200dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:text="Spend"
+            app:icon="@drawable/ic_attach_money_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
