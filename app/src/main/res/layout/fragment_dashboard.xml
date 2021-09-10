@@ -13,19 +13,30 @@
     android:layout_height="wrap_content"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:autoSizeTextType="uniform"
-        android:layout_height="108dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="13dp"
-        android:text="0.00"
-        android:textAlignment="center"
-        android:textSize="70sp"
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="327dp"
+        android:layout_height="308dp"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/progress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:autoSizeTextType="uniform"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textSize="64sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/progressBar2" />
 
     <Button
         android:id="@+id/button5"
@@ -63,18 +74,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:text="You are under your budget!" />
-
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="327dp"
-        android:layout_height="308dp"
-        android:max="100"
-        android:progress="100"
-        android:progressDrawable="@drawable/progress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="-3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

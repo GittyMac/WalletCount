@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <!-- Android 12 Colors -->
+        <item name="colorPrimary">@android:color/system_accent1_600</item>
+        <item name="colorPrimaryDark">@android:color/system_accent1_600</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@android:color/system_neutral1_50</item>
+        <item name="colorSurface">@android:color/system_neutral1_50</item>
+        <item name="bottomSheetDialogTheme">@style/BottomSheet</item>
+        <item name="android:navigationBarColor">@android:color/system_neutral1_50</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@android:color/system_neutral1_50</item>
+        <item name="actionBarTheme">@style/ThemeA12.ActionBar</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="colorPrimary">@android:color/system_accent1_600</item>
+        <item name="colorPrimaryDark">@android:color/system_accent1_600</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@android:color/system_neutral1_50</item>
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:navigationBarColor">@android:color/system_neutral1_50</item>
+    </style>
+    <style name="ThemeA12.ActionBar" parent="">
+        <item name="colorPrimary">@android:color/system_neutral1_50</item>
+    </style>
+</resources>

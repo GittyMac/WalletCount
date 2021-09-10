@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+        getSupportActionBar().setElevation(0);
         navView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
     }
