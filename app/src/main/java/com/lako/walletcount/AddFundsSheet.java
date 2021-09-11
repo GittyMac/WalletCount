@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -38,6 +40,8 @@ public class AddFundsSheet extends BottomSheetDialogFragment {
         addFunds = view.findViewById(R.id.button);
         amount = getActivity().findViewById(R.id.textView);
         fundsToAdd = view.findViewById(R.id.textInputEditText2);
+        fundsToAdd.requestFocus();
+        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         addFunds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

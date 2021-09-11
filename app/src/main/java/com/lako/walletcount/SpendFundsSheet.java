@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -37,6 +38,8 @@ public class SpendFundsSheet extends BottomSheetDialogFragment {
         amount = getActivity().findViewById(R.id.textView);
         budget = getActivity().findViewById(R.id.textView7);
         fundsToRemove = view.findViewById(R.id.inputText);
+        fundsToRemove.requestFocus();
+        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         textbudget = sharedPreferences.getString(TEXTBUDGET, "0.00");
         spendFunds.setOnClickListener(new View.OnClickListener() {
             @Override

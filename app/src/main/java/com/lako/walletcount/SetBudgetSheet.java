@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -38,6 +39,8 @@ public class SetBudgetSheet extends BottomSheetDialogFragment {
         inputEditText = view.findViewById(R.id.inputtext2);
         setBudget = view.findViewById(R.id.button6);
         budget = getActivity().findViewById(R.id.textView7);
+        inputEditText.requestFocus();
+        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         setBudget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
