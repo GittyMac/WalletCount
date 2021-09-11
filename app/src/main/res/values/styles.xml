@@ -37,7 +37,12 @@
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
-    <style name="ButtonColor" parent="Widget.MaterialComponents.Button">
-        <item name="android:textColor">#FFFFFF</item>
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/RoundedButton</item>
     </style>
+    <style name="RoundedButton">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25dp</item>
+    </style>
+
 </resources>

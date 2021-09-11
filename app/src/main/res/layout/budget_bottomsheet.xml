@@ -7,56 +7,60 @@
 
     <Button
         android:id="@+id/button6"
+        style="@style/ButtonStyle"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="18dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="5dp"
         android:text="Set Budget"
         app:icon="@drawable/ic_attach_money_black_24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textInputLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintWidth_percent="0.45" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.45"  />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:text="Set Budget"
         android:textAlignment="center"
         android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
         android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.45"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="74dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button6"
+        app:layout_constraintWidth_percent="0.45"
         app:prefixText="$">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputtext2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:digits="0123456789.,"
             android:hint="Budget"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ScrollView
-        android:layout_width="412dp"
-        android:layout_height="11dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <LinearLayout
             android:layout_width="match_parent"

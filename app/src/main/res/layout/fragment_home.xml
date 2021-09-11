@@ -31,8 +31,9 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
             android:text="Add to balance"
             app:icon="@drawable/ic_add_black_24dp"
             app:layout_constraintBottom_toTopOf="@+id/button3"
@@ -43,8 +44,9 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="200dp"
-            android:layout_height="54dp"
+            style="@style/ButtonStyle"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:text="Spend"
             app:icon="@drawable/ic_attach_money_black_24dp"
