@@ -9,7 +9,7 @@
         <item name="android:windowBackground">@android:color/system_neutral1_900</item>
         <item name="colorSurface">@android:color/system_neutral1_900</item>
         <item name="bottomSheetDialogTheme">@style/BottomSheet</item>
-        <item name="android:navigationBarColor">@color/navColorDark</item>
+        <item name="android:navigationBarColor">@android:color/system_accent2_800</item>
         <item name="android:statusBarColor">@android:color/system_neutral1_900</item>
     </style>
     <style name="BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">

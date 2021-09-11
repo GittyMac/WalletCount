@@ -15,7 +15,7 @@
         <item name="actionBarTheme">@style/ThemeA12.ActionBar</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <style name="BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">
+    <style name="BottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
         <item name="colorPrimary">@android:color/system_accent1_600</item>
         <item name="colorPrimaryDark">@android:color/system_accent1_600</item>
         <item name="colorAccent">@color/colorAccent</item>
