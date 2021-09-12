@@ -7,13 +7,14 @@
 
     <Button
         android:id="@+id/button4"
-        style="@style/ButtonStyle"
+        style="@style/MD3.Button"
         android:layout_width="0dp"
         android:layout_height="74dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="5dp"
         android:text="Pay"
+        app:iconTint="?android:colorBackground"
         app:icon="@drawable/ic_attach_money_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textInputLayout"

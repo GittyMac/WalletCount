@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+    <style name="AppTheme" parent="Theme.Material3.DayNight">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -9,6 +9,12 @@
         <item name="bottomSheetDialogTheme">@style/BottomSheet</item>
         <item name="android:navigationBarColor">@color/navColorDark</item>
         <item name="android:statusBarColor">@color/bottomSheetBackgroundDark</item>
+        <item name="bottomNavigationStyle">@style/MD3.BottomNavStyle</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="MD3.BottomNavStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/MD3.ActiveIndicator</item>
+        <item name="android:background">@color/navColorDark</item>
     </style>
     <style name="BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">
         <item name="colorPrimary">@color/colorPrimary</item>

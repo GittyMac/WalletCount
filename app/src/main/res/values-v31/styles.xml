@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+    <style name="AppTheme" parent="Theme.Material3.DayNight">
         <!-- Android 12 Colors -->
         <item name="colorPrimary">@android:color/system_accent1_600</item>
         <item name="colorPrimaryDark">@android:color/system_accent1_600</item>
@@ -9,15 +9,20 @@
         <item name="android:windowBackground">@android:color/system_neutral1_50</item>
         <item name="colorSurface">@android:color/system_neutral1_50</item>
         <item name="bottomSheetDialogTheme">@style/BottomSheet</item>
-        <item name="android:navigationBarColor">@android:color/system_neutral1_50</item>
+        <item name="android:navigationBarColor">@android:color/system_neutral2_100</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@android:color/system_neutral1_50</item>
         <item name="actionBarTheme">@style/ThemeA12.ActionBar</item>
         <item name="android:textColor">@android:color/system_neutral2_900</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="bottomNavigationStyle">@style/MD3.BottomNavStyle</item>
     </style>
-    <style name="BottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+    <style name="MD3.BottomNavStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/MD3.ActiveIndicator</item>
+        <item name="android:background">@android:color/system_neutral2_100</item>
+    </style>
+    <style name="BottomSheet" parent="Theme.Material3.Light.BottomSheetDialog">
         <item name="colorPrimary">@android:color/system_accent1_600</item>
         <item name="colorPrimaryDark">@android:color/system_accent1_600</item>
         <item name="colorAccent">@color/colorAccent</item>

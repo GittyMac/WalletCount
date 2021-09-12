@@ -1,23 +1,39 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+    <style name="AppTheme" parent="Theme.Material3.DayNight">
         <!-- Customize your theme here. -->
         <item name="actionBarStyle">@style/ActionBar</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="bottomSheetDialogTheme">@style/BottomSheet</item>
-        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@color/navColor</item>
         <item name="android:statusBarColor">@android:color/white</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowActionBarOverlay">true</item>
+        <item name="bottomNavigationStyle">@style/MD3.BottomNavStyle</item>
+        <item name="buttonStyle">@style/MD3.Button</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="MD3.BottomNavStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/MD3.ActiveIndicator</item>
+    </style>
+    <style name="MD3.Button" parent="Widget.Material3.Button">
+        <item name="android:textColor">?android:colorBackground</item>
+    </style>
+    <style name="MD3.ActiveIndicator" parent="">
+        <item name="android:width">@dimen/m3_bottom_nav_item_active_indicator_width</item>
+        <item name="android:height">@dimen/m3_bottom_nav_item_active_indicator_height</item>
+        <item name="marginHorizontal">@dimen/m3_bottom_nav_item_active_indicator_margin_horizontal</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.BottomNavigationView.ActiveIndicator</item>
+        <item name="android:color">?android:colorPrimary</item>
     </style>
     <style name="ActionBar" parent="Widget.MaterialComponents.Light.ActionBar.Solid">
         <item name="elevation">0dp</item>
-        <item name="background">@android:color/white</item>
+        <item name="background">?android:colorBackground</item>
     </style>
-    <style name="BottomSheet" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+    <style name="BottomSheet" parent="Theme.Material3.Light.BottomSheetDialog">
         <item name="android:windowIsFloating">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -37,12 +53,4 @@
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
-    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
-        <item name="shapeAppearanceOverlay">@style/RoundedButton</item>
-    </style>
-    <style name="RoundedButton">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">25dp</item>
-    </style>
-
 </resources>

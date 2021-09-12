@@ -23,13 +23,14 @@
 
     <Button
         android:id="@+id/button"
-        style="@style/ButtonStyle"
+        style="@style/MD3.Button"
         android:layout_width="0dp"
         android:layout_height="74dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="5dp"
         android:text="Add Funds"
+        app:iconTint="?android:colorBackground"
         app:icon="@drawable/ic_add_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
@@ -44,8 +45,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button"
-        app:layout_constraintWidth_percent="0.45"
-        app:prefixText="$">
+        app:layout_constraintWidth_percent="0.45">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditText2"

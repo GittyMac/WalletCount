@@ -31,10 +31,11 @@
 
         <Button
             android:id="@+id/button2"
-            style="@style/ButtonStyle"
+            style="@style/MD3.Button"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:text="Add to balance"
+            app:iconTint="?android:colorBackground"
             app:icon="@drawable/ic_add_black_24dp"
             app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,11 +45,12 @@
 
         <Button
             android:id="@+id/button3"
-            style="@style/ButtonStyle"
+            style="@style/MD3.Button"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:text="Spend"
+            app:iconTint="?android:colorBackground"
             app:icon="@drawable/ic_attach_money_black_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
