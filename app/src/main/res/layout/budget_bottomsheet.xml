@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="5dp"
-        android:text="Set Budget"
+        android:text="@string/set_budget"
         app:iconTint="?android:colorBackground"
         app:icon="@drawable/ic_attach_money_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Set Budget"
+        android:text="@string/set_budget"
         android:textAlignment="center"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:digits="0123456789.,"
-            android:hint="Budget"
+            android:hint="@string/budget_hint"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -61,10 +61,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
