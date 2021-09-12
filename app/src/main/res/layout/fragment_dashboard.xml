@@ -14,7 +14,7 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/budgetRing"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="327dp"
         android:layout_height="308dp"
@@ -25,35 +25,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/budget_AmountText"
+        android:layout_width="0dp"
         android:layout_height="108dp"
-        android:autoSizeTextType="uniform"
-        tools:text="0.00"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
         android:textAlignment="center"
-        android:textSize="64sp"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/progressBar2" />
+        app:layout_constraintBottom_toBottomOf="@+id/budgetRing"
+        app:layout_constraintEnd_toEndOf="@+id/budgetRing"
+        app:layout_constraintStart_toStartOf="@+id/budgetRing"
+        app:layout_constraintTop_toTopOf="@+id/budgetRing"
+        tools:text="$0.00" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/budget_adjustButton"
         style="@style/MD3.Button"
         android:layout_width="200dp"
         android:layout_height="87dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/set_budget"
-        app:iconTint="?android:colorBackground"
         app:icon="@drawable/ic_attach_money_black_24dp"
+        app:iconTint="?android:colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/budget_feedbackDetails" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/budget_feedbackHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -61,11 +65,11 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar2"
+        app:layout_constraintTop_toBottomOf="@+id/budgetRing"
         tools:text="Good work! " />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/budget_feedbackDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -74,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/budget_feedbackHeading"
         tools:text="You are under your budget!" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,11 +11,11 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/add_funds_textLayout">
     </ScrollView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/add_funds_button"
         style="@style/MD3.Button"
         android:layout_width="0dp"
         android:layout_height="74dp"
@@ -27,22 +26,22 @@
         app:iconTint="?android:colorBackground"
         app:icon="@drawable/ic_add_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintStart_toEndOf="@+id/add_funds_textLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.45" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/add_funds_textLayout"
         android:layout_width="0dp"
         android:layout_height="74dp"
         android:layout_marginStart="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/add_funds_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/add_funds_button"
         app:layout_constraintWidth_percent="0.45">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText2"
+            android:id="@+id/add_funds_textEdit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:digits="0123456789.,"
@@ -51,7 +50,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -59,8 +57,8 @@
         android:textAlignment="center"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/add_funds_button"
+        app:layout_constraintStart_toStartOf="@+id/add_funds_textLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

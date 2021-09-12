@@ -31,9 +31,9 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
      ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        amount = root.findViewById(R.id.textView);
-        final Button addFundsButton = root.findViewById(R.id.button2);
-        final Button spendFundsButton = root.findViewById(R.id.button3);
+        amount = root.findViewById(R.id.home_amountText);
+        final Button addFundsButton = root.findViewById(R.id.home_addButton);
+        final Button spendFundsButton = root.findViewById(R.id.home_payButton);
         addFundsButton.setOnClickListener(v -> {
             AddFundsSheet addFundsDialog = new AddFundsSheet();
             addFundsDialog.show(requireActivity().getSupportFragmentManager(), "addFundsDialogBox");

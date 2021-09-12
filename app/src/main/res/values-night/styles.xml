@@ -1,8 +1,5 @@
 <resources>
-
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.Material3.DayNight">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -12,10 +9,13 @@
         <item name="bottomNavigationStyle">@style/MD3.BottomNavStyle</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+
     <style name="MD3.BottomNavStyle" parent="Widget.Material3.BottomNavigationView">
         <item name="itemActiveIndicatorStyle">@style/MD3.ActiveIndicator</item>
         <item name="android:background">@color/navColorDark</item>
     </style>
+
+    <!-- BottomSheet Style -->
     <style name="BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

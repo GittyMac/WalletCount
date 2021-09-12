@@ -6,19 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/home_amountText"
         android:layout_width="match_parent"
-        android:autoSizeTextType="uniform"
         android:layout_height="108dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="250dp"
-        tools:text="0.00"
+        android:autoSizeTextType="uniform"
         android:textAlignment="center"
         android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="$0.00" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/HomeConstraintInnerLayout"
@@ -27,24 +29,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/home_amountText">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/home_addButton"
             style="@style/MD3.Button"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:text="@string/add_to_balance"
             app:iconTint="?android:colorBackground"
             app:icon="@drawable/ic_add_black_24dp"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/home_payButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/home_payButton"
             style="@style/MD3.Button"
             android:layout_width="250dp"
             android:layout_height="60dp"
@@ -55,7 +57,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/home_addButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

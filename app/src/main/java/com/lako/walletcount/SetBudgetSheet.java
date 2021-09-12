@@ -37,9 +37,9 @@ public class SetBudgetSheet extends BottomSheetDialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setStyle(STYLE_NORMAL, R.style.BottomSheet);
         View view = inflater.inflate(R.layout.budget_bottomsheet, container, false);
-        inputEditText = view.findViewById(R.id.inputtext2);
-        Button setBudget = view.findViewById(R.id.button6);
-        budget = requireActivity().findViewById(R.id.textView7);
+        inputEditText = view.findViewById(R.id.budget_textEdit);
+        Button setBudget = view.findViewById(R.id.budget_button);
+        budget = requireActivity().findViewById(R.id.budget_AmountText);
         inputEditText.requestFocus();
         requireDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         setBudget.setOnClickListener(v -> {
@@ -48,11 +48,8 @@ public class SetBudgetSheet extends BottomSheetDialogFragment {
             }
             try {
                 double num1 = 0;
-                try {
-                    num1 = Objects.requireNonNull(NumberFormat.getInstance(Locale.getDefault()).parse(inputEditText.getText().toString().replaceAll("[^\\d.,-]", ""))).doubleValue();
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                try { num1 = Objects.requireNonNull(NumberFormat.getInstance(Locale.getDefault()).parse(inputEditText.getText().toString().replaceAll("[^\\d.,-]", ""))).doubleValue(); }
+                catch (ParseException e) { e.printStackTrace(); }
                 budget.setText(NumberFormat.getCurrencyInstance().format(num1));
                 Calendar cal = Calendar.getInstance();
                 SimpleDateFormat month_date = new SimpleDateFormat("MMMM", Locale.getDefault());

@@ -39,11 +39,11 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
      ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        amountLeft = root.findViewById(R.id.textView7);
-        TextView message1 = root.findViewById(R.id.textView8);
-        TextView message2 = root.findViewById(R.id.textView9);
-        Button setBudget = root.findViewById(R.id.button5);
-        progressBar = root.findViewById(R.id.progressBar2);
+        amountLeft = root.findViewById(R.id.budget_AmountText);
+        TextView message1 = root.findViewById(R.id.budget_feedbackHeading);
+        TextView message2 = root.findViewById(R.id.budget_feedbackDetails);
+        Button setBudget = root.findViewById(R.id.budget_adjustButton);
+        progressBar = root.findViewById(R.id.budgetRing);
         Calendar cal=Calendar.getInstance();
         SimpleDateFormat month_date = new SimpleDateFormat("MMMM", Locale.getDefault());
         String curMonth = month_date.format(cal.getTime());

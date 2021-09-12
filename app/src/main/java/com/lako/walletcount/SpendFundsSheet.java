@@ -34,9 +34,9 @@ public class SpendFundsSheet extends BottomSheetDialogFragment {
         setStyle(STYLE_NORMAL, R.style.BottomSheet);
         View view = inflater.inflate(R.layout.spend_funds_bottomsheet, container, false);
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-        Button spendFunds = view.findViewById(R.id.button4);
-        amount = requireActivity().findViewById(R.id.textView);
-        fundsToRemove = view.findViewById(R.id.inputText);
+        Button spendFunds = view.findViewById(R.id.pay_Button);
+        amount = requireActivity().findViewById(R.id.home_amountText);
+        fundsToRemove = view.findViewById(R.id.pay_textEdit);
         fundsToRemove.requestFocus();
         requireDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         textBudget = sharedPreferences.getString(TEXTBUDGET, "0.00");

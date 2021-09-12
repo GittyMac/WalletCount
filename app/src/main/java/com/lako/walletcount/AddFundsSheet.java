@@ -32,16 +32,13 @@ public class AddFundsSheet extends BottomSheetDialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setStyle(STYLE_NORMAL, R.style.BottomSheet);
         View view = inflater.inflate(R.layout.add_funds_bottomsheet, container, false);
-
-        Button addFunds = view.findViewById(R.id.button);
-        amount = requireActivity().findViewById(R.id.textView);
-        fundsToAdd = view.findViewById(R.id.textInputEditText2);
+        Button addFunds = view.findViewById(R.id.add_funds_button);
+        amount = requireActivity().findViewById(R.id.home_amountText);
+        fundsToAdd = view.findViewById(R.id.add_funds_textEdit);
         fundsToAdd.requestFocus();
         requireDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         addFunds.setOnClickListener(v -> {
-            if(Objects.requireNonNull(fundsToAdd.getText()).toString().length() == 0){
-                fundsToAdd.setText("0");
-            }
+            if(Objects.requireNonNull(fundsToAdd.getText()).toString().length() == 0){ fundsToAdd.setText("0"); }
             try {
                 double num1 = Objects.requireNonNull(NumberFormat.getInstance().parse(fundsToAdd.getText().toString().replaceAll("[^\\d.,-]", ""))).doubleValue();
                 double num2 = Objects.requireNonNull(NumberFormat.getInstance().parse(amount.getText().toString().replaceAll("[^\\d.,-]", ""))).doubleValue();

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/budget_button"
         style="@style/MD3.Button"
         android:layout_width="0dp"
         android:layout_height="74dp"
@@ -17,12 +16,11 @@
         app:iconTint="?android:colorBackground"
         app:icon="@drawable/ic_attach_money_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout3"
+        app:layout_constraintStart_toEndOf="@+id/budget_textLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.45"  />
 
     <TextView
-        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -30,22 +28,22 @@
         android:textAlignment="center"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/budget_button"
+        app:layout_constraintStart_toStartOf="@+id/budget_textLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/budget_textLayout"
         android:layout_width="0dp"
         android:layout_height="74dp"
         android:layout_marginStart="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintEnd_toStartOf="@+id/budget_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="@+id/budget_button"
         app:layout_constraintWidth_percent="0.45">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputtext2"
+            android:id="@+id/budget_textEdit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:digits="0123456789.,"
@@ -60,6 +58,6 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/budget_textLayout">
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
