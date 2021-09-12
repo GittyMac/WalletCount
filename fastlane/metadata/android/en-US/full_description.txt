@@ -1,3 +1,3 @@
-WalletCount is an app that helps manage your wallet.
+WalletCount is an app that helps keep track of the cash in your wallet.
 It features a monthly budget option to help save and prevent impulse buying.
 It will help check the money in your wallet with a modern UI.
