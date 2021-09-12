@@ -17,58 +17,52 @@ import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Objects;
+
 public class SpendFundsSheet extends BottomSheetDialogFragment {
     private TextInputEditText fundsToRemove;
     private TextView amount;
-    private Button spendFunds;
-    private TextView budget;
-
-    private String text;
-    private String textbudget;
+    private String textBudget;
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
     public static final String TEXTBUDGET = "textbudget";
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         setStyle(STYLE_NORMAL, R.style.BottomSheet);
         View view = inflater.inflate(R.layout.spend_funds_bottomsheet, container, false);
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        spendFunds = view.findViewById(R.id.button4);
-        amount = getActivity().findViewById(R.id.textView);
-        budget = getActivity().findViewById(R.id.textView7);
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        Button spendFunds = view.findViewById(R.id.button4);
+        amount = requireActivity().findViewById(R.id.textView);
         fundsToRemove = view.findViewById(R.id.inputText);
         fundsToRemove.requestFocus();
-        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-        textbudget = sharedPreferences.getString(TEXTBUDGET, "0.00");
-        spendFunds.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(fundsToRemove.getText().toString().length() == 0){
-                    fundsToRemove.setText("0");
-                }
-                try {
-                    double num1 = Double.parseDouble(fundsToRemove.getText().toString().replaceAll(",", "."));
-                    double num2 = Double.parseDouble(amount.getText().toString().replaceAll(",", "."));
-                    double num3 = Double.parseDouble(textbudget.replaceAll(",", "."));
-                    double budgetsum = num3 - num1;
-                    double sum = num2 - num1;
-                    textbudget = String.format("%.2f", budgetsum);
-                    amount.setText(String.format("%.2f", sum));
-                    SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                    editor.putString(TEXT, amount.getText().toString());
-                    editor.putString(TEXTBUDGET, textbudget);
-                    editor.apply();
-                }catch(NumberFormatException exception){
-                    new AlertDialog.Builder(v.getContext())
-                            .setTitle("Error")
-                            .setMessage("Invalid number was entered.")
-                            .setNeutralButton("OK", null)
-                            .setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();
-                }
+        requireDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        textBudget = sharedPreferences.getString(TEXTBUDGET, "0.00");
+        spendFunds.setOnClickListener(v -> {
+            if(Objects.requireNonNull(fundsToRemove.getText()).toString().length() == 0){ fundsToRemove.setText("0"); }
+            try {
+                double num1 = Objects.requireNonNull(NumberFormat.getInstance().parse(fundsToRemove.getText().toString().replaceAll("[^\\d.,-]", ""))).doubleValue();
+                double num2 = Objects.requireNonNull(NumberFormat.getInstance().parse(amount.getText().toString().replaceAll("[^\\d.,-]", ""))).doubleValue();
+                double num3 = Objects.requireNonNull(NumberFormat.getInstance().parse(textBudget.replaceAll("[^\\d.,-]", ""))).doubleValue();
+                double budgetSum = num3 - num1;
+                double sum = num2 - num1;
+                textBudget = NumberFormat.getCurrencyInstance().format(budgetSum);
+                amount.setText(NumberFormat.getCurrencyInstance().format(sum));
+                SharedPreferences sharedPreferences1 = requireActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences1.edit();
+                editor.putString(TEXT, amount.getText().toString());
+                editor.putString(TEXTBUDGET, textBudget);
+                editor.apply();
+                dismiss();
+            }catch(NumberFormatException | ParseException exception){
+                new AlertDialog.Builder(v.getContext())
+                        .setTitle("Error")
+                        .setMessage("Invalid number was entered.")
+                        .setNeutralButton("OK", null)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
             }
         });
         return view;

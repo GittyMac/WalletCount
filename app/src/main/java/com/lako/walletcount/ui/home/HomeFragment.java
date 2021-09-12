@@ -10,14 +10,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.lako.walletcount.AddFundsSheet;
 import com.lako.walletcount.R;
 import com.lako.walletcount.SpendFundsSheet;
+
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
@@ -26,29 +27,20 @@ public class HomeFragment extends Fragment {
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
-    private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+     ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         amount = root.findViewById(R.id.textView);
         final Button addFundsButton = root.findViewById(R.id.button2);
         final Button spendFundsButton = root.findViewById(R.id.button3);
-        addFundsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddFundsSheet addFundsDialog = new AddFundsSheet();
-                addFundsDialog.show(getActivity().getSupportFragmentManager(), "addFundsDialogBox");
-            }
+        addFundsButton.setOnClickListener(v -> {
+            AddFundsSheet addFundsDialog = new AddFundsSheet();
+            addFundsDialog.show(requireActivity().getSupportFragmentManager(), "addFundsDialogBox");
         });
-        spendFundsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SpendFundsSheet  spendFundsDialog = new SpendFundsSheet();
-                spendFundsDialog.show(getActivity().getSupportFragmentManager(), "spendFundsDialogBox");
-            }
+        spendFundsButton.setOnClickListener(v -> {
+            SpendFundsSheet  spendFundsDialog = new SpendFundsSheet();
+            spendFundsDialog.show(requireActivity().getSupportFragmentManager(), "spendFundsDialogBox");
         });
         loadData();
         updateViews();
@@ -56,13 +48,17 @@ public class HomeFragment extends Fragment {
     }
 
     public void loadData(){
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         text = sharedPreferences.getString(TEXT, "0.00");
     }
 
     public void updateViews(){
-        amount.setText(text);
+        double amountDouble = 0.00;
+        try {
+            amountDouble = Objects.requireNonNull(NumberFormat.getInstance().parse(text.replaceAll("[^\\d.,-]", ""))).doubleValue();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        amount.setText(NumberFormat.getCurrencyInstance().format(amountDouble));
     }
 }
