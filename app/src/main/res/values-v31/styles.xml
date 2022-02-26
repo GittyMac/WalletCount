@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.Material3.DayNight">
         <!-- Android 12 Colors -->
         <item name="colorPrimary">@android:color/system_accent1_600</item>
@@ -35,5 +36,17 @@
 
     <style name="ThemeA12.ActionBar" parent="">
         <item name="colorPrimary">@android:color/system_neutral1_50</item>
+    </style>
+
+    <style name="Widget.WalletCount.AppWidget.Container" parent="android:Widget">
+        <item name="android:padding">?attr/appWidgetPadding</item>
+        <item name="android:background">@drawable/app_widget_background</item>
+        <item name="android:clipToOutline">true</item>
+    </style>
+
+    <style name="Widget.WalletCount.AppWidget.InnerView" parent="android:Widget">
+        <item name="android:padding">?attr/appWidgetPadding</item>
+        <item name="android:background">@drawable/app_widget_inner_view_background</item>
+        <item name="android:clipToOutline">true</item>
     </style>
 </resources>

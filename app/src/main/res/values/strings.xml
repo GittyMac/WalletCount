@@ -14,4 +14,7 @@
     <string name="pay_with_wallet">Pay with Wallet</string>
     <string name="amount_spent_hint">Amount Spent</string>
     <string name="amount_to_add_hint">Amount to Add</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">The amount of money in your wallet.</string>
+    <string name="appwidget_text">EXAMPLE</string>
 </resources>
