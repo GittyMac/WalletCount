@@ -8,7 +8,7 @@
     <string name="PositiveBudgetText">You are under your budget!</string>
     <string name="set_budget">Adjust Budget</string>
     <string name="budget_hint">Budget</string>
-    <string name="add_to_balance">Add Funds</string>
+    <string name="add_to_balance">Add</string>
     <string name="spend">Spend</string>
     <string name="pay">Pay</string>
     <string name="pay_with_wallet">Pay with Wallet</string>

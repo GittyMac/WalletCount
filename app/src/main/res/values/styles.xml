@@ -56,4 +56,7 @@
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
+
+    <!--This is here to avoid a mysterious compile error when merging the styles. -->
+    <style name="ShapeAppearance.Material3.BottomNavigationView.ActiveIndicator" parent=""></style>
 </resources>
