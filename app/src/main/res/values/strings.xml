@@ -1,19 +1,27 @@
 <resources>
+    <!-- General -->
     <string name="app_name">WalletCount</string>
     <string name="title_home">Amount</string>
     <string name="title_dashboard">Budget</string>
+    <string name="name_hint">Name</string>
+
+    <!-- Budget -->
+    <string name="budget_hint">Budget</string>
+    <string name="set_budget">Adjust Budget</string>
     <string name="NegativeBudgetTitle">We can work on that.</string>
     <string name="NegativeBudgetText">You went over your budget!</string>
     <string name="PositiveBudgetTitle">Good work!</string>
     <string name="PositiveBudgetText">You are under your budget!</string>
-    <string name="set_budget">Adjust Budget</string>
-    <string name="budget_hint">Budget</string>
+
+    <!-- Home -->
     <string name="add_to_balance">Add</string>
     <string name="spend">Spend</string>
     <string name="pay">Pay</string>
     <string name="pay_with_wallet">Pay with Wallet</string>
     <string name="amount_spent_hint">Amount Spent</string>
     <string name="amount_to_add_hint">Amount to Add</string>
+
+    <!-- Widget -->
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">The amount of money in your wallet.</string>
     <string name="appwidget_text">EXAMPLE</string>

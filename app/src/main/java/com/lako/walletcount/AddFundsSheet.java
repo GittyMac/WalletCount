@@ -34,9 +34,11 @@ public class AddFundsSheet extends BottomSheetDialogFragment {
         View view = inflater.inflate(R.layout.add_funds_bottomsheet, container, false);
         Button addFunds = view.findViewById(R.id.add_funds_button);
         amount = requireActivity().findViewById(R.id.home_amountText);
+
         fundsToAdd = view.findViewById(R.id.add_funds_textEdit);
         fundsToAdd.requestFocus();
         requireDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+
         addFunds.setOnClickListener(v -> {
             if(Objects.requireNonNull(fundsToAdd.getText()).toString().length() == 0){ fundsToAdd.setText("0"); }
             try {

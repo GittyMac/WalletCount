@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fillViewport="true">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,45 +20,61 @@
 
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/home_amountText"
-                android:layout_width="match_parent"
-                android:layout_height="108dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginEnd="20dp"
-                android:autoSizeTextType="uniform"
-                android:textAlignment="center"
-                android:textSize="70sp"
-                tools:text="$0.00" />
-
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center|top"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp">
 
-                <Button
-                    android:id="@+id/home_addButton"
-                    style="@style/MD3.Button"
-                    android:layout_width="120dp"
-                    android:layout_height="60dp"
-                    android:layout_marginEnd="10dp"
-                    android:text="@string/add_to_balance"
-                    app:icon="@drawable/ic_add_black_24dp"
-                    app:iconTint="?android:colorBackground" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp">
 
-                <Button
-                    android:id="@+id/home_payButton"
-                    style="@style/MD3.Button"
-                    android:layout_width="120dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/spend"
-                    app:icon="@drawable/ic_attach_money_black_24dp"
-                    app:iconTint="?android:colorBackground" />
-            </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/home_amountText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:autoSizeTextType="uniform"
+                        android:textAlignment="center"
+                        android:textSize="70sp"
+                        tools:text="$0.00" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center|top"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/home_addButton"
+                            style="@style/MD3.Button"
+                            android:layout_width="120dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/add_to_balance"
+                            app:icon="@drawable/ic_add_black_24dp"
+                            app:iconTint="?android:colorBackground" />
+
+                        <Button
+                            android:id="@+id/home_payButton"
+                            style="@style/MD3.Button"
+                            android:layout_width="120dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/spend"
+                            app:icon="@drawable/ic_attach_money_black_24dp"
+                            app:iconTint="?android:colorBackground" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/expense_recycler"
@@ -68,9 +82,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp" />
+                android:layout_marginEnd="20dp"
+                android:nestedScrollingEnabled="false" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
